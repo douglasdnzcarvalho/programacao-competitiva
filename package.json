@@ -4,7 +4,7 @@
   "description": "Programação Competitiva",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/douglasdnzcarvalho/programacao-competitiva/issues"
   },
-  "homepage": "https://github.com/douglasdnzcarvalho/programacao-competitiva#readme"
+  "homepage": "https://github.com/douglasdnzcarvalho/programacao-competitiva#readme",
+  "devDependencies": {
+    "jest": "^26.2.2"
+  }
 }
