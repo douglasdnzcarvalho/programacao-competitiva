@@ -7,8 +7,8 @@ function testProblem(problemNumber) {
     let folderPath = './' + problemNumber;
 
     test.each(getValidTestCases(folderPath))('Scenario %s', async (scenarioNumber) => {
-        let expected = readFileSync(`${folderPath}/output_${scenarioNumber}.txt`, 'UTF-8');
         let received = await executeScript(folderPath, scenarioNumber);
+        let expected = readFileSync(`${folderPath}/output_${scenarioNumber}.txt`, 'UTF-8');
 
         expect(received).toBe(expected);
     })
@@ -68,7 +68,7 @@ async function executeScript(path, scenarioNumber) {
     }
 
     for await (const chunk of script.stderr) {
-        error += chunk;
+        error += chunk.toString();
     }
 
     const exitCode = await new Promise((resolve, reject) => {
